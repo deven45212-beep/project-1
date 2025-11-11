@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartok Monastery - A Foundation of Sikkimese History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles and animations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfbf7; /* A warm, paper-like background */
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+        }
+
+        .monastery-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            perspective: 1000px;
+        }
+        
+        /* Prayer Wheel Animation */
+        .prayer-wheel-container {
+            position: absolute;
+            width: 150px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            animation: spin-wheel 10s linear infinite;
+        }
+
+        @keyframes spin-wheel {
+            from { transform: translate(-50%, -50%) rotateY(0deg); }
+            to { transform: translate(-50%, -50%) rotateY(360deg); }
+        }
+
+        .wheel-face {
+            position: absolute;
+            width: 150px;
+            height: 200px;
+            background: linear-gradient(to bottom, #d4af37, #b38600);
+            border: 4px solid #6b4f00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #6b4f00;
+            backface-visibility: hidden;
+        }
+        /* Positioning the faces of a hexagonal prism to form the wheel */
+        .face-1 { transform: rotateY(0deg) translateZ(130px); }
+        .face-2 { transform: rotateY(60deg) translateZ(130px); }
+        .face-3 { transform: rotateY(120deg) translateZ(130px); }
+        .face-4 { transform: rotateY(180deg) translateZ(130px); }
+        .face-5 { transform: rotateY(240deg) translateZ(130px); }
+        .face-6 { transform: rotateY(300deg) translateZ(130px); }
+
+        .wheel-top, .wheel-bottom {
+            position: absolute;
+            width: 260px; /* Wider to form the hexagonal shape */
+            height: 260px;
+            background-color: #a04000;
+            border: 4px solid #6b4f00;
+            transform: rotateX(90deg) rotateZ(-30deg) skewX(30deg) scaleY(.864);
+        }
+        .wheel-top { top: -30px; }
+        .wheel-bottom { bottom: -30px; transform: rotateX(-90deg) rotateZ(-30deg) skewX(30deg) scaleY(.864); }
+
+        .wheel-axle {
+            position: absolute;
+            width: 10px;
+            height: 300px;
+            background-color: #5d4037;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Clouds */
+        .cloud {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: move-clouds 20s linear infinite;
+        }
+        .cloud-1 { top: 20%; left: -20%; width: 100px; height: 30px; }
+        .cloud-2 { top: 40%; left: -30%; width: 150px; height: 45px; animation-duration: 25s; }
+        .cloud-3 { top: 60%; left: -15%; width: 80px; height: 25px; animation-duration: 18s; }
+
+        @keyframes move-clouds {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(100vw + 150px)); }
+        }
+        
+        .manuscript-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .manuscript-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body class="bg-[#fdfbf7] text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold font-lora text-[#a04000]">Kartok Monastery</div>
+            <ul class="flex space-x-8 text-gray-600 font-medium">
+                <li><a href="file:///C:/Users/deven/Documents/SIH/experiment2.html#monasteries" class="hover:text-[#a04000] transition-colors">Home</a></li>
+                <li><a href="#about" class="hover:text-[#a04000] transition-colors">About</a></li>
+                <li><a href="#manuscripts" class="hover:text-[#a04000] transition-colors">Archives</a></li>
+                <li><a href="#calendar" class="text-gray-600 hover:text-gray-900 transition duration-300">Calendar</a></li>
+                <li><a href="#booking" class="hover:text-[#a04000] transition-colors">Book a Visit</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-sky-300 via-sky-200 to-[#fdfbf7]">
+            <!-- Clouds -->
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+
+            <div class="text-center z-10">
+                <!-- Monastery Animation -->
+                <div class="monastery-container mb-8">
+                    <div class="wheel-axle"></div>
+                    <div class="prayer-wheel-container">
+                        <div class="wheel-top"></div>
+                        <div class="wheel-face face-1">༄</div>
+                        <div class="wheel-face face-2">༅</div>
+                        <div class="wheel-face face-3">༆</div>
+                        <div class="wheel-face face-4">༄</div>
+                        <div class="wheel-face face-5">༅</div>
+                        <div class="wheel-face face-6">༆</div>
+                        <div class="wheel-bottom"></div>
+                    </div>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-800 mb-4" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.1);">Kartok Monastery</h1>
+                <p class="text-xl text-gray-600">A pillar of faith in the first capital of Sikkim, Yuksom.</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">The Seat of Lama Kartok Kunto Zangpo</h2>
+                    <div class="w-24 h-1 bg-[#a04000] mx-auto mt-4 rounded"></div>
+                </div>
+                <!--  -->
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed text-justify">
+                    <p class="mb-6">
+                        Located in the historic village of Yuksom, the first capital of Sikkim, Kartok Monastery holds a place of profound importance in the state's origin story. It is one of the three seminal monasteries founded to commemorate the meeting of the three great lamas—Lhatsun Chempo, Sempa Chempo, and Rigdzin Chempo—who consecrated Phuntsog Namgyal as the first Chogyal (Dharma King) of Sikkim in 1642. This monastery is specifically associated with Lama Kartok Kunto Zangpo, one of these revered figures who journeyed from Tibet to establish the Buddhist kingdom. Its serene location, surrounded by lush forests and overlooking the ancient coronation throne of Norbugang, connects it directly to the very roots of Sikkimese identity and faith.
+                    </p>
+                    <p class="mb-6">
+                        While perhaps more modest in scale compared to Rumtek or Pemayangtse, Kartok Monastery exudes an atmosphere of deep authenticity and tranquil spirituality. The current structure, painted in a beautiful lake-red color, is a newer building that replaced the original, older gompa. Inside, it is adorned with exquisite murals, thangkas, and statues, preserving the rich iconography of the Nyingma school of Tibetan Buddhism. The monastery is a vital center for the local community, upholding ancient rituals and teachings. For visitors, a trip to Kartok is more than a tour; it is a step back in time to the very foundation of Sikkim, offering a peaceful and contemplative space to appreciate the kingdom's unique heritage.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Manuscripts Section -->
+        <section id="manuscripts" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">Manuscripts & Historical Archives</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore a collection of sacred texts, ancient manuscripts, and historical documents preserved at the monastery.</p>
+                     <div class="w-24 h-1 bg-[#a04000] mx-auto mt-4 rounded"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Manuscript Card 1 -->
+                   <a href="https://www.himalayanart.org/books/lamaism/book1.pdf"><div class="manuscript-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#a04000" viewBox="0 0 256 256"><path d="M242.3,101.7C240.2,95,234.3,89.5,227.8,88L152,78.2,122,9.3a12.1,12.1,0,0,0-21.6,0l-30,68.9-75.8,9.8c-6.5,1.5-12.4,7-14.5,13.7s0,14.3,5.2,18.8l56.8,51.8-16.3,74.9a12.1,12.1,0,0,0,18.1,12.3L128,220.1l65.9,39.3a12.1,12.1,0,0,0,18.1-12.3l-16.3-74.9,56.8-51.8C242.4,116,244.4,108.4,242.3,101.7Z" opacity="0.2"></path><path d="M248,103.8c-2.4-7.8-9.2-13.9-17-15.5L155.2,76.6,125.1,7.2a16,16,0,0,0-29.8,0L65.2,76.6,6,88.3C-.8,89.9-4.3,102,1.9,109.2l61.3,56L44.5,243.2c-1.8,8.2,7.1,15.4,14.7,11.3l70.1-41.8,70.1,41.8c7.6,4.1,16.5-3.1,14.7-11.3L193.2,165.2l61.3-56C258.8,104.9,250.4,96,248,103.8ZM184.2,162.1a16.1,16.1,0,0,0-4.9,15.3l15.3,70.3-65.8-39.2a15.9,15.9,0,0,0-14.2,0L49,247.7l15.3-70.3a16.1,16.1,0,0,0-4.9-15.3L6.8,111.9,83,100.8a16.2,16.2,0,0,0,12.8-9.4L128,19.6l32.2,71.8a16.2,16.2,0,0,0,12.8,9.4l76.2,11.1Z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">The Chronicles of the Three Lamas</h3>
+                            <p class="text-gray-600">Historical accounts of the meeting and consecration ceremony that founded the kingdom of Sikkim.</p>
+                        </div>
+                    </div></a>
+                    <!-- Manuscript Card 2 -->
+                   <a href="https://dakinitranslations.com/2024/11/29/three-living-panchen-lamas-history-of-politically-appointed-lineage/"><div class="manuscript-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#a04000" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V216a8,8,0,0,0,16,0V56A8,8,0,0,1,40,48H216a8,8,0,0,0,0-16Z" opacity="0.2"></path><path d="M224,40a8,8,0,0,1,8,8V216a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V48a8,8,0,0,1,16,0V216a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V48A8,8,0,0,1,224,40Z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Biographies of Kartok Lamas</h3>
+                            <p class="text-gray-600">Texts detailing the lineage and teachings associated with the monastery's patron lamas.</p>
+                        </div>
+                    </div></a>
+                    <!-- Manuscript Card 3 -->
+                   <a href="file:///C:/Users/deven/Documents/SIH/Rituals%20of%20the%20Nyingma%20School.html"><div class="manuscript-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#a04000" viewBox="0 0 256 256"><path d="M208,24H72A16,16,0,0,0,56,40v80a8,8,0,0,0,16,0V40a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8V184a8,8,0,0,1-8,8H176a8,8,0,0,0,0,16h32a16,16,0,0,0,16-16V40A16,16,0,0,0,208,24Z" opacity="0.2"></path><path d="M152,72H48A16,16,0,0,0,32,88V216a16,16,0,0,0,16,16H152a16,16,0,0,0,16-16V88A16,16,0,0,0,152,72Zm0,144H48V88H152Z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Rituals of the Nyingma School</h3>
+                            <p class="text-gray-600">A collection of liturgical texts specific to the practices of the "Ancient Ones" school.</p>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+        </section>
+
+         <!-- Cultural Calendar Section -->
+        <section id="calendar" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-playfair text-4xl font-bold mb-8 section-header">Festivals & Events</h2>
+                 <p class="max-w-3xl mx-auto text-gray-600 mb-12">
+                    Join our monastic community for annual ceremonies and prayer gatherings. Dates are based on the Tibetan lunar calendar.
+                </p>
+                <div class="bg-white p-8 rounded-lg shadow-xl max-w-4xl mx-auto border border-gray-200">
+                    <div class="flex justify-between items-center mb-6">
+                        <button class="text-gray-600 hover:text-gray-900">&lt; Prev</button>
+                        <h3 class="text-2xl font-bold">August 2026</h3>
+                        <button class="text-gray-600 hover:text-gray-900">Next &gt;</button>
+                    </div>
+                    <div class="grid grid-cols-7 gap-2 text-center">
+                        <div class="font-bold text-gray-500">S</div><div class="font-bold text-gray-500">M</div><div class="font-bold text-gray-500">T</div><div class="font-bold text-gray-500">W</div><div class="font-bold text-gray-500">T</div><div class="font-bold text-gray-500">F</div><div class="font-bold text-gray-500">S</div>
+                        <div class="text-gray-400">27</div><div class="text-gray-400">28</div><div class="text-gray-400">29</div><div class="text-gray-400">30</div><div class="text-gray-400">31</div><div>1</div><div>2</div>
+                        <div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+                        <div>10</div><div>11</div><div>12</div><div>13</div>
+                        <div class="relative bg-red-100 rounded-lg p-2 border border-red-300">
+                            14
+                             <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max bg-gray-800 text-white text-xs rounded py-1 px-2 z-10">Pang Lhabsol</span>
+                        </div>
+                        <div>15</div><div>16</div>
+                        <div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div>
+                        <div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">Plan Your Visit</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We welcome visitors seeking peace and learning. Please book your visit in advance to help us accommodate you.</p>
+                    <div class="w-24 h-1 bg-[#a04000] mx-auto mt-4 rounded"></div>
+                </div>
+
+                <div class="max-w-xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <form id="booking-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c54b00]" required>
+                            </div>
+                             <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c54b00]" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                             <label for="date" class="block text-gray-700 font-medium mb-2">Preferred Date of Visit</label>
+                             <input type="date" id="date" name="date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c54b00]" required>
+                        </div>
+                         <div class="mb-6">
+                             <label for="visitors" class="block text-gray-700 font-medium mb-2">Number of Visitors</label>
+                             <input type="number" id="visitors" name="visitors" min="1" max="10" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c54b00]" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-[#a04000] text-white font-bold py-3 px-8 rounded-full hover:bg-[#803300] transition-all duration-300 transform hover:scale-105">Request Booking</button>
+                        </div>
+                    </form>
+                    <p id="form-message" class="text-center mt-4 font-medium"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Kartok Monastery. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Designed with peace and reverence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Booking form submission
+        const bookingForm = document.getElementById('booking-form');
+        const formMessage = document.getElementById('form-message');
+
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            
+            formMessage.textContent = `Thank you, ${name}. Your booking request has been sent. We will contact you via email shortly.`;
+            formMessage.style.color = 'green';
+            
+            bookingForm.reset();
+
+            setTimeout(() => {
+                formMessage.textContent = '';
+            }, 5000);
+        });
+        
+        // Set min date for date picker to today
+        const datePicker = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        datePicker.setAttribute('min', today);
+
+    </script>
+</body>
+</html>
+

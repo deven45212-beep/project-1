@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terma Treasure Text</title>
+    <style>
+        /* Import Google Font for the title */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500&display=swap');
+
+        /* General Body Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            /* Sets a clean, modern font for the page */
+            background-color: #f8f9fa;
+            /* A light grey background for better contrast */
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            /* White with 80% opacity */
+            backdrop-filter: blur(10px);
+            /* Creates the frosted glass effect */
+            position: sticky;
+            /* Makes the header stay at the top when scrolling */
+            top: 0;
+            z-index: 50;
+            /* Ensures the header stays above other content */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            /* A subtle shadow for depth */
+            width: 100%;
+        }
+
+        /* Navigation Container */
+        nav {
+            max-width: 1280px;
+            /* Limits the width of the content */
+            margin: 0 auto;
+            /* Centers the navigation bar */
+            padding: 1rem 1.5rem;
+            /* Adds padding on the top/bottom and sides */
+            display: flex;
+            justify-content: space-between;
+            /* Pushes the title and links to opposite ends */
+            align-items: center;
+            /* Vertically aligns items in the nav bar */
+        }
+
+        /* Monastery Title / Logo */
+        .logo {
+            font-family: 'Lora', serif;
+            /* A more elegant font for the title */
+            font-size: 1.75rem;
+            /* Makes the title larger */
+            font-weight: 700;
+            /* Bold */
+            color: #a52a2a;
+            /* The specified brown color */
+        }
+
+        /* Navigation Links List */
+        nav ul {
+            display: flex;
+            list-style: none;
+            /* Removes bullet points */
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 2rem;
+            /* Creates space between the links */
+        }
+
+        nav a {
+            text-decoration: none;
+            /* Removes the underline from links */
+            color: #555;
+            /* A slightly darker grey for better readability */
+            font-weight: 500;
+            /* Medium font weight */
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            /* Smooth color change on hover */
+        }
+
+        nav a:hover {
+            color: #a52a2a;
+            /* Changes color to brown on hover */
+        }
+
+        /* Main Content Wrapper for Centering and Padding */
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* Iframe Styles */
+        iframe {
+            max-width: 1400px;
+            width: 100%;
+            /* Makes the iframe responsive */
+            height: 75vh;
+            /* Sets height relative to the viewport height for better scaling */
+            border: 1px solid #ddd;
+            /* A light border */
+            border-radius: 8px;
+            /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* A more pronounced shadow */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold font-lora text-[#a52a2a]">Pemayangtse Monastery</div>
+            <ul class="flex space-x-8 text-gray-600 font-medium">
+                <li><a href="file:///C:/Users/deven/Documents/SIH/pemayangtsewebpage.html"
+                        class="hover:text-[#a52a2a] transition-colors">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br><br>
+    <iframe
+        src="https://archive.org/embed/tibetantreasureliteraturerevelationtraditionandaccomplishmentinvisonarybuddhismandreasdoctor_490_X"
+        width="1400" height="600" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true"
+        allowfullscreen></iframe>
+
+</body>
+
+</html>

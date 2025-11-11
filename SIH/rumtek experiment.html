@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumtek Monastery - The Dharmachakra Centre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Custom styles and animations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfbf7;
+            /* A warm, paper-like background */
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Lora', serif;
+        }
+
+        .monastery-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            animation: float 6s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Monastery parts styling */
+        .base {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            height: 80px;
+            background-color: #a52a2a;
+            /* Brownish-red */
+            border: 2px solid #5d1a1a;
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .middle-tier {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 240px;
+            height: 60px;
+            background-color: #fff8e1;
+            /* Creamy white */
+            border: 2px solid #d4c098;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .window {
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 30px;
+            background-color: #5d1a1a;
+            border-radius: 3px;
+        }
+
+        .roof-base {
+            position: absolute;
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 20px;
+            background-color: #a52a2a;
+            border: 2px solid #5d1a1a;
+            border-radius: 5px;
+        }
+
+        .top-roof {
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            height: 50px;
+            background: linear-gradient(145deg, #ffd700, #f0c400);
+            /* Golden roof */
+            border-radius: 10px 10px 0 0;
+            clip-path: polygon(10% 100%, 0 100%, 0 20%, 50% 0, 100% 20%, 100% 100%, 90% 100%, 50% 40%);
+            animation: glint 5s infinite;
+        }
+
+        .pinnacle {
+            position: absolute;
+            bottom: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 30px;
+            background: #ffd700;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        }
+
+        @keyframes glint {
+
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+
+        /* Clouds */
+        .cloud {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: move-clouds 20s linear infinite;
+        }
+
+        .cloud-1 {
+            top: 20%;
+            left: -20%;
+            width: 100px;
+            height: 30px;
+        }
+
+        .cloud-2 {
+            top: 40%;
+            left: -30%;
+            width: 150px;
+            height: 45px;
+            animation-duration: 25s;
+        }
+
+        .cloud-3 {
+            top: 60%;
+            left: -15%;
+            width: 80px;
+            height: 25px;
+            animation-duration: 18s;
+        }
+
+        @keyframes move-clouds {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(100vw + 150px));
+            }
+        }
+
+        .manuscript-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .manuscript-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+
+<body class="bg-[#fdfbf7] text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold font-lora text-[#a52a2a]">Rumtek Monastery</div>
+            <ul class="flex space-x-8 text-gray-600 font-medium">
+                <li><a href="file:///C:/Users/deven/Documents/SIH/experiment2.html#monasteries" class="hover:text-[#a52a2a] transition-colors">Home</a></li>
+                <li><a href="#about" class="hover:text-[#a52a2a] transition-colors">About</a></li>
+                <li><a href="#manuscripts" class="hover:text-[#a52a2a] transition-colors">Archives</a></li>
+                <li><a href="#calendar" class="text-gray-600 hover:text-gray-900 transition duration-300">Calendar</a></li>
+                <li><a href="#booking" class="hover:text-[#a52a2a] transition-colors">Book a Visit</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home"
+            class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-sky-200 via-sky-100 to-[#fdfbf7]">
+            <!-- Clouds -->
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+
+            <div class="text-center z-10">
+                <!-- Monastery Animation -->
+                <div class="monastery-container mb-8">
+                    <div class="base"></div>
+                    <div class="middle-tier">
+                        <div class="window" style="left: 30px;"></div>
+                        <div class="window" style="left: 105px;"></div>
+                        <div class="window" style="right: 30px;"></div>
+                    </div>
+                    <div class="roof-base"></div>
+                    <div class="top-roof"></div>
+                    <div class="pinnacle"></div>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-800 mb-4"
+                    style="text-shadow: 1px 1px 3px rgba(0,0,0,0.1);">Welcome to Rumtek</h1>
+                <p class="text-xl text-gray-600">Discover the heart of Tibetan Buddhism in Sikkim.</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">The Dharmachakra Centre</h2>
+                    <div class="w-24 h-1 bg-[#a52a2a] mx-auto mt-4 rounded"></div>
+                </div>
+                <!--  -->
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed text-justify">
+                    <p class="mb-6">
+                        Perched atop a hill facing the city of Gangtok, Rumtek Monastery is a beacon of Tibetan Buddhism
+                        and one of the most significant monastic institutions in the world. Originally built in the
+                        mid-18th century, it was re-established in the 1960s by the 16th Karmapa, Rangjung Rigpe Dorje,
+                        who fled Tibet. The monastery, also known as the Dharmachakra Centre, was designed to be a
+                        replica of the Tsurphu Monastery in Tibet, serving as the main seat of the Karma Kagyu lineage
+                        in exile. Its architecture is a breathtaking spectacle of traditional Tibetan design,
+                        characterized by vibrant murals, intricate woodcarvings, and a majestic golden stupa containing
+                        the relics of the 16th Karmapa.
+                    </p>
+                    <p class="mb-6">
+                        The monastery complex is a sprawling center for Buddhist studies and spiritual practice. It
+                        houses a magnificent prayer hall filled with larger-than-life statues of Buddhist deities,
+                        ancient thangkas (silk paintings), and invaluable religious scriptures. The atmosphere within is
+                        one of profound tranquility and reverence, where the air hums with the gentle chanting of monks
+                        and the fluttering of prayer flags carrying blessings on the wind. Beyond its spiritual
+                        significance, Rumtek is a cultural treasure, preserving the rich artistic and philosophical
+                        heritage of Tibetan Buddhism for future generations and offering a peaceful sanctuary for
+                        seekers from all corners of the globe.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manuscripts Section -->
+        <section id="manuscripts" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">Manuscripts & Historical Archives</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore a collection of sacred texts, ancient
+                        manuscripts, and historical documents preserved at the monastery.</p>
+                    <div class="w-24 h-1 bg-[#a52a2a] mx-auto mt-4 rounded"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Manuscript Card 1 -->
+                   <a href="file:///C:/Users/deven/Documents/SIH/The%20Kangyur%20&%20Tengyur%20Texts.html"><div class="manuscript-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#a52a2a"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M242.3,101.7C240.2,95,234.3,89.5,227.8,88L152,78.2,122,9.3a12.1,12.1,0,0,0-21.6,0l-30,68.9-75.8,9.8c-6.5,1.5-12.4,7-14.5,13.7s0,14.3,5.2,18.8l56.8,51.8-16.3,74.9a12.1,12.1,0,0,0,18.1,12.3L128,220.1l65.9,39.3a12.1,12.1,0,0,0,18.1-12.3l-16.3-74.9,56.8-51.8C242.4,116,244.4,108.4,242.3,101.7Z"
+                                    opacity="0.2"></path>
+                                <path
+                                    d="M248,103.8c-2.4-7.8-9.2-13.9-17-15.5L155.2,76.6,125.1,7.2a16,16,0,0,0-29.8,0L65.2,76.6,6,88.3C-.8,89.9-4.3,102,1.9,109.2l61.3,56L44.5,243.2c-1.8,8.2,7.1,15.4,14.7,11.3l70.1-41.8,70.1,41.8c7.6,4.1,16.5-3.1,14.7-11.3L193.2,165.2l61.3-56C258.8,104.9,250.4,96,248,103.8ZM184.2,162.1a16.1,16.1,0,0,0-4.9,15.3l15.3,70.3-65.8-39.2a15.9,15.9,0,0,0-14.2,0L49,247.7l15.3-70.3a16.1,16.1,0,0,0-4.9-15.3L6.8,111.9,83,100.8a16.2,16.2,0,0,0,12.8-9.4L128,19.6l32.2,71.8a16.2,16.2,0,0,0,12.8,9.4l76.2,11.1Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">The Kangyur & Tengyur Texts</h3>
+                            <p class="text-gray-600">Sacred collections of teachings and commentaries attributed to the
+                                Buddha and later masters.</p>
+                        </div>
+                    </div></a>
+                    <!-- Manuscript Card 2 -->
+                   <a href="file:///C:/Users/deven/Documents/SIH/Biographies%20of%20the%20Karmapas.html"><div class="manuscript-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#a52a2a"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M216,40H40A16,16,0,0,0,24,56V216a8,8,0,0,0,16,0V56A8,8,0,0,1,40,48H216a8,8,0,0,0,0-16Z"
+                                    opacity="0.2"></path>
+                                <path
+                                    d="M224,40a8,8,0,0,1,8,8V216a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V48a8,8,0,0,1,16,0V216a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V48A8,8,0,0,1,224,40Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Biographies of the Karmapas</h3>
+                            <p class="text-gray-600">Historical records detailing the lives and teachings of the
+                                successive leaders of the Karma Kagyu school.</p>
+                        </div>
+                    </div></a>
+                    <!-- Manuscript Card 3 -->
+                   <a href="file:///C:/Users/deven/Documents/SIH/Ritual%20Texts%20&%20Liturgies.html"><div class="manuscript-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#a52a2a"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M208,24H72A16,16,0,0,0,56,40v80a8,8,0,0,0,16,0V40a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8V184a8,8,0,0,1-8,8H176a8,8,0,0,0,0,16h32a16,16,0,0,0,16-16V40A16,16,0,0,0,208,24Z"
+                                    opacity="0.2"></path>
+                                <path
+                                    d="M152,72H48A16,16,0,0,0,32,88V216a16,16,0,0,0,16,16H152a16,16,0,0,0,16-16V88A16,16,0,0,0,152,72Zm0,144H48V88H152Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Ritual Texts & Liturgies</h3>
+                            <p class="text-gray-600">A vast collection of procedural texts used for various ceremonies,
+                                prayers, and practices.Text is written by ancient writers</p>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultural Calendar Section -->
+        <section id="calendar" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-playfair text-4xl font-bold mb-8 section-header">Cultural Calendar</h2>
+                 <p class="max-w-3xl mx-auto text-gray-600 mb-12">
+                    Join us for sacred ceremonies, festivals, and teachings throughout the year. Please verify dates before planning your visit.
+                </p>
+                <div class="bg-white p-8 rounded-lg shadow-xl max-w-4xl mx-auto">
+                    <div class="flex justify-between items-center mb-6">
+                        <button class="text-gray-600 hover:text-gray-900">&lt; Prev</button>
+                        <h3 class="text-2xl font-bold">February 2026</h3>
+                        <button class="text-gray-600 hover:text-gray-900">Next &gt;</button>
+                    </div>
+                    <div class="grid grid-cols-7 gap-2 text-center">
+                        <div class="font-bold text-gray-500">Sun</div>
+                        <div class="font-bold text-gray-500">Mon</div>
+                        <div class="font-bold text-gray-500">Tue</div>
+                        <div class="font-bold text-gray-500">Wed</div>
+                        <div class="font-bold text-gray-500">Thu</div>
+                        <div class="font-bold text-gray-500">Fri</div>
+                        <div class="font-bold text-gray-500">Sat</div>
+                        <!-- Calendar Days -->
+                        <div class="text-gray-400">26</div><div class="text-gray-400">27</div><div class="text-gray-400">28</div><div class="text-gray-400">29</div><div class="text-gray-400">30</div><div class="text-gray-400">31</div><div>1</div>
+                        <div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div>
+                        <div>9</div>
+                        <div class="relative bg-yellow-100 rounded-lg p-2 border border-yellow-300">
+                            10
+                            <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max bg-gray-800 text-white text-xs rounded py-1 px-2">Losar - Day 1</span>
+                        </div>
+                        <div class="relative bg-yellow-100 rounded-lg p-2 border border-yellow-300">11</div>
+                        <div class="relative bg-yellow-100 rounded-lg p-2 border border-yellow-300">12</div>
+                        <div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
+                        <div class="relative bg-red-100 rounded-lg p-2 border border-red-300">
+                            22
+                             <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max bg-gray-800 text-white text-xs rounded py-1 px-2">Guru Rinpoche Tsechu</span>
+                        </div>
+                        <div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">Plan Your Visit</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We welcome visitors seeking peace and learning.
+                        Please book your visit in advance to help us accommodate you.</p>
+                    <div class="w-24 h-1 bg-[#a52a2a] mx-auto mt-4 rounded"></div>
+                </div>
+
+                <div class="max-w-xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <form id="booking-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c53030]"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c53030]"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="date" class="block text-gray-700 font-medium mb-2">Preferred Date of
+                                Visit</label>
+                            <input type="date" id="date" name="date"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c53030]"
+                                required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="visitors" class="block text-gray-700 font-medium mb-2">Number of
+                                Visitors</label>
+                            <input type="number" id="visitors" name="visitors" min="1" max="10"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#c53030]"
+                                required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit"
+                                class="bg-[#a52a2a] text-white font-bold py-3 px-8 rounded-full hover:bg-[#852020] transition-all duration-300 transform hover:scale-105">Request
+                                Booking</button>
+                        </div>
+                    </form>
+                    <p id="form-message" class="text-center mt-4 font-medium"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Rumtek Monastery, Dharmachakra Centre. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Designed with peace and reverence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Booking form submission
+        const bookingForm = document.getElementById('booking-form');
+        const formMessage = document.getElementById('form-message');
+
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+
+            formMessage.textContent = `Thank you, ${name}. Your booking request has been sent. We will contact you via email shortly.`;
+            formMessage.style.color = 'green';
+
+            bookingForm.reset();
+
+            setTimeout(() => {
+                formMessage.textContent = '';
+            }, 5000);
+        });
+
+        // Set min date for date picker to today
+        const datePicker = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        datePicker.setAttribute('min', today);
+
+    </script>
+</body>
+
+</html>

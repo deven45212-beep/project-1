@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tashiding Monastery - The Heart of Sikkim's Sacred Land</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles and animations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfbf7; /* A warm, paper-like background */
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+        }
+
+        .monastery-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            animation: float 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Tashiding Stupa (Chorten) Styling */
+        .stupa-base {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 50px;
+            background-color: #fff;
+            border: 2px solid #5a5a5a;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .stupa-dome {
+            position: absolute;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 70px;
+            background: radial-gradient(circle at 50% 120%, #ffffff 50%, #e0e0e0 100%);
+            border-radius: 70px 70px 0 0;
+            border: 2px solid #5a5a5a;
+            border-bottom: none;
+        }
+        
+        .stupa-harmika {
+            position: absolute;
+            bottom: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+            background-color: #d4af37; /* Gold color */
+            border: 2px solid #8e762d;
+        }
+
+        .stupa-spire {
+            position: absolute;
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 80px solid #d4af37;
+        }
+        
+        .stupa-pinnacle {
+             position: absolute;
+             bottom: 260px;
+             left: 50%;
+             transform: translateX(-50%);
+             width: 20px;
+             height: 20px;
+             background-color: #d4af37;
+             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star shape */
+             animation: pulse-glow 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 2px #fff); }
+            50% { filter: brightness(1.5) drop-shadow(0 0 8px #ffd700); }
+        }
+        
+        /* Prayer Flags */
+        .prayer-flag {
+            position: absolute;
+            width: 20px;
+            height: 15px;
+            animation: flutter 1s ease-in-out infinite alternate;
+        }
+        @keyframes flutter {
+            from { transform: skewX(-10deg) rotateZ(-2deg); }
+            to { transform: skewX(10deg) rotateZ(2deg); }
+        }
+        
+        /* Clouds */
+        .cloud {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: move-clouds 20s linear infinite;
+        }
+        .cloud-1 { top: 20%; left: -20%; width: 100px; height: 30px; }
+        .cloud-2 { top: 40%; left: -30%; width: 150px; height: 45px; animation-duration: 25s; }
+        .cloud-3 { top: 60%; left: -15%; width: 80px; height: 25px; animation-duration: 18s; }
+
+        @keyframes move-clouds {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(100vw + 150px)); }
+        }
+        
+        .manuscript-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .manuscript-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body class="bg-[#fdfbf7] text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold font-lora text-[#003366]">Tashiding Monastery</div>
+            <ul class="flex space-x-8 text-gray-600 font-medium">
+                <li><a href="file:///C:/Users/deven/Documents/SIH/experiment2.html#monasteries" class="hover:text-[#003366] transition-colors">Home</a></li>
+                <li><a href="#about" class="hover:text-[#003366] transition-colors">About</a></li>
+                <li><a href="#manuscripts" class="hover:text-[#003366] transition-colors">Archives</a></li>
+                <li><a href="#calendar" class="text-gray-600 hover:text-gray-900 transition duration-300">Calendar</a></li>
+                <li><a href="#booking" class="hover:text-[#003366] transition-colors">Book a Visit</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-sky-300 via-sky-200 to-[#fdfbf7]">
+            <!-- Clouds -->
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+
+            <div class="text-center z-10">
+                <!-- Monastery Animation -->
+                <div class="monastery-container mb-8">
+                    <div class="stupa-base"></div>
+                    <div class="stupa-dome"></div>
+                    <div class="stupa-harmika"></div>
+                    <div class="stupa-spire"></div>
+                    <div class="stupa-pinnacle"></div>
+                    <!-- Prayer Flags -->
+                    <div class="prayer-flag" style="background-color: #0077c8; top: 160px; left: 30px; animation-delay: 0.1s;"></div>
+                    <div class="prayer-flag" style="background-color: #fff; top: 155px; left: 50px; animation-delay: 0.2s;"></div>
+                    <div class="prayer-flag" style="background-color: #ff0000; top: 152px; left: 70px; animation-delay: 0.3s;"></div>
+                    <div class="prayer-flag" style="background-color: #009900; top: 160px; right: 30px; animation-delay: 0.1s;"></div>
+                    <div class="prayer-flag" style="background-color: #ffff00; top: 155px; right: 50px; animation-delay: 0.2s;"></div>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-800 mb-4" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.1);">Tashiding Monastery</h1>
+                <p class="text-xl text-gray-600">Where a glimpse is said to wash away all sins.</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">The Hill of the Auspicious Fortune</h2>
+                    <div class="w-24 h-1 bg-[#003366] mx-auto mt-4 rounded"></div>
+                </div>
+                <!--  -->
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed text-justify">
+                    <p class="mb-6">
+                        Considered the spiritual heart of Sikkim, Tashiding Monastery sits majestically on a conical hill overlooking the confluence of the sacred Rathong Chu and Rangeet rivers. Its name, meaning "The Devoted Central Glory," reflects its paramount importance in Tibetan Buddhism. Legend holds that the great master Guru Padmasambhava (Guru Rinpoche) shot an arrow into the air, vowing to meditate where it landed; the arrow fell on this very hill, consecrating the land in the 8th century. The monastery itself was founded in the 17th century by Ngadak Sempa Chempo, one of the three lamas who performed the consecration of the first Chogyal (King) of Sikkim. Because of this profound history, Tashiding is considered the most sacred and holy monastery in the region.
+                    </p>
+                    <p class="mb-6">
+                        The monastery is most renowned for the Thongwa Rangdol Chorten, a sacred stupa believed to cleanse the sins of anyone who merely lays eyes upon it. This belief draws thousands of pilgrims, especially during the Bhumchu festival. Held annually on the 14th and 15th days of the first Tibetan month, this unique ceremony involves the opening of a sacred pot of holy water, the level of which is said to foretell the fortunes of the coming year. The monastery complex, dotted with numerous chortens, mani walls (stone plates inscribed with mantras), and fluttering prayer flags, exudes an aura of deep and abiding peace. For pilgrims and travelers alike, Tashiding is not just a destination but a powerful spiritual experience.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Manuscripts Section -->
+        <section id="manuscripts" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">Manuscripts & Historical Archives</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Explore a collection of sacred texts, ancient manuscripts, and historical documents preserved at the monastery.</p>
+                     <div class="w-24 h-1 bg-[#003366] mx-auto mt-4 rounded"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                   <!-- Manuscript Card 1 -->
+                   <a href="file:///C:/Users/deven/Documents/SIH/Life%20of%20Guru%20Padmasambhava.html"><div class="manuscript-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#003366" viewBox="0 0 256 256"><path d="M242.3,101.7C240.2,95,234.3,89.5,227.8,88L152,78.2,122,9.3a12.1,12.1,0,0,0-21.6,0l-30,68.9-75.8,9.8c-6.5,1.5-12.4,7-14.5,13.7s0,14.3,5.2,18.8l56.8,51.8-16.3,74.9a12.1,12.1,0,0,0,18.1,12.3L128,220.1l65.9,39.3a12.1,12.1,0,0,0,18.1-12.3l-16.3-74.9,56.8-51.8C242.4,116,244.4,108.4,242.3,101.7Z" opacity="0.2"></path><path d="M248,103.8c-2.4-7.8-9.2-13.9-17-15.5L155.2,76.6,125.1,7.2a16,16,0,0,0-29.8,0L65.2,76.6,6,88.3C-.8,89.9-4.3,102,1.9,109.2l61.3,56L44.5,243.2c-1.8,8.2,7.1,15.4,14.7,11.3l70.1-41.8,70.1,41.8c7.6,4.1,16.5-3.1,14.7-11.3L193.2,165.2l61.3-56C258.8,104.9,250.4,96,248,103.8ZM184.2,162.1a16.1,16.1,0,0,0-4.9,15.3l15.3,70.3-65.8-39.2a15.9,15.9,0,0,0-14.2,0L49,247.7l15.3-70.3a16.1,16.1,0,0,0-4.9-15.3L6.8,111.9,83,100.8a16.2,16.2,0,0,0,12.8-9.4L128,19.6l32.2,71.8a16.2,16.2,0,0,0,12.8,9.4l76.2,11.1Z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Life of Guru Padmasambhava</h3>
+                            <p class="text-gray-600">Sacred texts detailing the life, travels, and teachings of the master who blessed this land.</p>
+                        </div>
+                    </div></a>
+                    <!-- Manuscript Card 2 -->
+                   <a href="http://archivenepal.s3.amazonaws.com/digitalhimalaya/collections/journals/bot/pdf/bot_1992_03_03.pdf"><div class="manuscript-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#003366" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V216a8,8,0,0,0,16,0V56A8,8,0,0,1,40,48H216a8,8,0,0,0,0-16Z" opacity="0.2"></path><path d="M224,40a8,8,0,0,1,8,8V216a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V48a8,8,0,0,1,16,0V216a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V48A8,8,0,0,1,224,40Z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">The Bhumchu Ceremony Texts</h3>
+                            <p class="text-gray-600">Liturgical documents outlining the procedures and significance of the holy water festival.</p>
+                        </div>
+                    </div></a>
+                    <!-- Manuscript Card 3 -->
+                   <a href="https://himalaya.socanth.cam.ac.uk/collections/journals/bot/pdf/bot_2003_01_03.pdf"><div class="manuscript-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#003366" viewBox="0 0 256 256"><path d="M208,24H72A16,16,0,0,0,56,40v80a8,8,0,0,0,16,0V40a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8V184a8,8,0,0,1-8,8H176a8,8,0,0,0,0,16h32a16,16,0,0,0,16-16V40A16,16,0,0,0,208,24Z" opacity="0.2"></path><path d="M152,72H48A16,16,0,0,0,32,88V216a16,16,0,0,0,16,16H152a16,16,0,0,0,16-16V88A16,16,0,0,0,152,72Zm0,144H48V88H152Z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Royal Decrees & Histories</h3>
+                            <p class="text-gray-600">Documents relating to the Chogyals of Sikkim and their patronage of the monastery.</p>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultural Calendar Section -->
+        <section id="calendar" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-playfair text-4xl font-bold mb-8 section-header">Festivals & Events</h2>
+                 <p class="max-w-3xl mx-auto text-gray-600 mb-12">
+                    Experience the sacred traditions of Tashiding. Dates are based on the Tibetan lunar calendar and are subject to change.
+                </p>
+                <div class="bg-white p-8 rounded-lg shadow-xl max-w-4xl mx-auto border border-gray-200">
+                    <div class="flex justify-between items-center mb-6">
+                        <button class="text-gray-600 hover:text-gray-900">&lt; Prev</button>
+                        <h3 class="text-2xl font-bold">February 2026</h3>
+                        <button class="text-gray-600 hover:text-gray-900">Next &gt;</button>
+                    </div>
+                    <div class="grid grid-cols-7 gap-2 text-center">
+                        <div class="font-bold text-gray-500">S</div><div class="font-bold text-gray-500">M</div><div class="font-bold text-gray-500">T</div><div class="font-bold text-gray-500">W</div><div class="font-bold text-gray-500">T</div><div class="font-bold text-gray-500">F</div><div class="font-bold text-gray-500">S</div>
+                        <div class="text-gray-400">26</div><div class="text-gray-400">27</div><div class="text-gray-400">28</div><div class="text-gray-400">29</div><div class="text-gray-400">30</div><div class="text-gray-400">31</div><div>1</div>
+                        <div>2</div><div>3</div><div>4</div>
+                        <div class="relative bg-orange-100 rounded-lg p-2 border border-orange-300">
+                            5
+                             <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max bg-gray-800 text-white text-xs rounded py-1 px-2 z-10">Bhumchu Festival</span>
+                        </div>
+                        <div class="relative bg-orange-100 rounded-lg p-2 border border-orange-300">6</div>
+                        <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
+                        <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800">Plan Your Visit</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We welcome visitors seeking peace and learning. Please book your visit in advance to help us accommodate you.</p>
+                    <div class="w-24 h-1 bg-[#003366] mx-auto mt-4 rounded"></div>
+                </div>
+
+                <div class="max-w-xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <form id="booking-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052a3]" required>
+                            </div>
+                             <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052a3]" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                             <label for="date" class="block text-gray-700 font-medium mb-2">Preferred Date of Visit</label>
+                             <input type="date" id="date" name="date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052a3]" required>
+                        </div>
+                         <div class="mb-6">
+                             <label for="visitors" class="block text-gray-700 font-medium mb-2">Number of Visitors</label>
+                             <input type="number" id="visitors" name="visitors" min="1" max="10" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052a3]" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-[#003366] text-white font-bold py-3 px-8 rounded-full hover:bg-[#002244] transition-all duration-300 transform hover:scale-105">Request Booking</button>
+                        </div>
+                    </form>
+                    <p id="form-message" class="text-center mt-4 font-medium"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Tashiding Monastery. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Designed with peace and reverence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Booking form submission
+        const bookingForm = document.getElementById('booking-form');
+        const formMessage = document.getElementById('form-message');
+
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            
+            formMessage.textContent = `Thank you, ${name}. Your booking request has been sent. We will contact you via email shortly.`;
+            formMessage.style.color = 'green';
+            
+            bookingForm.reset();
+
+            setTimeout(() => {
+                formMessage.textContent = '';
+            }, 5000);
+        });
+        
+        // Set min date for date picker to today
+        const datePicker = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        datePicker.setAttribute('min', today);
+
+    </script>
+</body>
+</html>
+

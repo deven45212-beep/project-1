@@ -1,0 +1,131 @@
+/* ===== Blue-Green-White Theme ===== */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e6f9f7, #f9fcff);
+    color: #04364A;
+    margin: 0;
+    padding: 0;
+}
+
+ header {
+            background: linear-gradient(120deg, black, skyblue);
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            color: #e6f9f7;
+        }
+
+        header div {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+            color: black;
+            /* green hover */
+        }
+
+/* Page container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    text-align: left;
+    color: #035e61;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size:40px;
+}
+
+#searchBox {
+      width: 300px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #2a6f97;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+
+    #searchBox:focus {
+      border-color: #3c9d9b;
+    }
+/* Lists */
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: linear-gradient(90deg, #05BFDB, #90E0EF);
+    color: white;
+    margin: 10px 0;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Links */
+a {
+    color: #05668D;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #028090;
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    background: #05668D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #028090;
+}
+
+/* Footer */
+footer {
+    background:linear-gradient(360deg, black, skyblue);
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: white;
+    padding: 10px 20px;
+}
